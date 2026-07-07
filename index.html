@@ -12,6 +12,7 @@
             background-color: #f4f7f4;
             color: #333;
             padding-bottom: 60px; /* Evita que o rodapé cubra o conteúdo */
+            scroll-behavior: smooth; /* Faz a rolagem do menu ser suave */
         }
 
         header {
@@ -30,6 +31,9 @@
             display: flex;
             justify-content: center;
             padding: 10px 0;
+            position: sticky; /* Mantém o menu fixo no topo ao rolar a página */
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
@@ -53,30 +57,34 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        .welcome-section {
-            text-align: left; /* Alinhado à esquerda para melhor leitura de blocos de texto maiores */
-            padding: 10px 0 30px 0;
+        section {
+            padding: 40px 0;
             border-bottom: 2px solid #e0e0e0;
         }
 
-        .welcome-section h2 { 
-            color: #2e7d32; 
-            text-align: center; /* Mantém o título de boas-vindas centralizado */
+        section:last-of-type {
+            border-bottom: none; /* Remove a linha divisória do último item */
         }
 
-        .welcome-section p {
+        .welcome-section {
+            text-align: left;
+            padding-top: 10px;
+        }
+
+        .welcome-section h2, .section-title { 
+            color: #2e7d32; 
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
             line-height: 1.6;
             margin-bottom: 15px;
             font-size: 1.05rem;
+            color: #444;
         }
 
-        /* Estilo para a seção das Associações */
-        .communities-title {
-            text-align: center;
-            color: #2e7d32;
-            margin-top: 30px;
-        }
-
+        /* Estilo para a grade das Associações */
         .communities-grid {
             display: flex;
             gap: 20px;
@@ -114,6 +122,31 @@
             color: #555;
         }
 
+        /* Estilos da lista de produtos */
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .product-item {
+            background-color: #f9fbf9;
+            border-left: 4px solid #2e7d32;
+            padding: 10px 15px;
+            border-radius: 0 4px 4px 0;
+            font-weight: 500;
+        }
+
+        /* Estilos da seção de Contato */
+        .contact-info {
+            background-color: #f9fbf9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed #2e7d32;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
         footer {
             text-align: center;
             padding: 15px;
@@ -134,41 +167,69 @@
     </header>
 
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Sobre Nós</a>
-        <a href="#">Produtos</a>
-        <a href="#">Contacto</a>
+        <a href="#inicio">Início</a>
+        <a href="#sobre-nos">Sobre Nós</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#contacto">Contacto</a>
     </nav>
 
     <div class="container">
-        <section class="welcome-section">
+        
+        <section id="inicio" class="welcome-section">
             <h2>Bem-vindo ao espaço da Agricultura Familiar de Diamantino</h2>
-            <p>Este é um ambiente criado pela Secretaria Municipal de Agricultura e Meio Ambiente de Diamantino para valorizar, fortalecer e dar visibilidade ao trabalho dos nossos agricultores familiares. Aqui, você encontrará produtos de qualidade, cultivados com dedicação por quem movimenta a economia local e preserva nossas tradições.</p>
-            <p>O portal reúne as principais associações e cooperativas do município — Associação CEIBA, Associação dos Produtores do Córrego Grande e COODAF — promovendo a conexão direta entre produtores e consumidores. Neste espaço, cada organização pode apresentar seus produtos, compartilhar informações, divulgar contatos para vendas e esclarecer dúvidas, aproximando o campo da cidade de forma prática e acessível.</p>
+            <p>Criado pela Secretaria Municipal de Agricultura e Meio Ambiente, este portal valoriza e dá visibilidade aos produtores locais, fortalecendo a conexão entre campo e cidade. Aqui você encontra as associações Associação CEIBA, Associação do Córrego Grande e COODAF, que apresentam seus produtos, disponibilizam contatos para vendas e esclarecem dúvidas, além de um espaço com fotos que mostram a realidade e o trabalho no campo. Um canal direto para apoiar quem produz, gerar oportunidades e fortalecer a agricultura familiar do nosso município.</p>
+            
+            <h2 class="communities-title" style="text-align: center; color: #2e7d32; margin-top: 40px;">Associações e Cooperativas Atendidas</h2>
+            <div class="communities-grid">
+                <div class="community-card">
+                    <h3>Associação CEIBA</h3>
+                    <p>A Associação da Agricultura Familiar Sustentável de Policultura – CEIBA, fundada em 2012, é uma organização composta por 51 membros, em sua maioria detentores do Cadastro Nacional da Agricultura Familiar (CAF).</p>
+                    <p><strong>Principais produtos:</strong> café, olericultura, horticultura, apicultura, fabricação de farinha de mandioca, além da produção de leite e seus derivados.</p>
+                </div>
+
+                <div class="community-card">
+                    <h3>Associação Córrego Grande</h3>
+                    <p>A Associação dos Mini e Pequenos Produtores do Córrego Grande, fundada em 1988, é composta por 52 membros, todos devidamente inscritos no Cadastro Nacional da Agricultura Familiar (CAF).</p>
+                    <p><strong>Principais produtos:</strong> hortifrutigranjeiros, olericultura, leite e derivados, além da produção de ovos, contribuindo para o abastecimento local com alimentos de qualidade.</p>
+                </div>
+
+                <div class="community-card">
+                    <h3>Cooperativa COODAF</h3>
+                    <p>A Cooperativa Agropecuária Diamantinense da Agricultura Familiar – COODAF, fundada em 2007, é composta por 42 membros, em sua maioria detentores do Cadastro Nacional da Agricultura Familiar (CAF).</p>
+                    <p><strong>Principais produtos:</strong> mel, leite e derivados, hortifrutigranjeiros, olericultura e fabricação de farinha, contribuindo para o abastecimento local e a valorização da produção familiar.</p>
+                </div>
+            </div>
         </section>
 
-        <h2 class="communities-title">Associações e Cooperativas Atendidas</h2>
-        <div class="communities-grid">
-            
-            <div class="community-card">
-                <h3>Associação CEIBA</h3>
-                <p>A Associação da Agricultura Familiar Sustentável de Policultura – CEIBA,pfundada em 2012, é uma organização composta por 51 membros, em sua maioria detentores do Cadastro Nacional da Agricultura Familiar (CAF).</p>
-                <p><strong>Principais produtos:</strong> café, olericultura, horticultura, apicultura, fabricação de farinha de mandioca, além da produção de leite e seus derivados.</p>
-            </div>
+        <section id="sobre-nos">
+            <h2 class="section-title">Sobre Nós</h2>
+            <p>O Portal Vitrine Rural Diamantino nasceu com o propósito de aproximar o consumidor da riqueza produzida no campo de Diamantino - MT. Gerido em parceria com órgãos governamentais e representações locais, buscamos encurtar caminhos comerciais e garantir que a dedicação do trabalhador rural seja reconhecida.</p>
+            <p>Nossa missão é impulsionar a sustentabilidade econômica das famílias do campo, promovendo técnicas agrícolas tradicionais aliadas ao suporte técnico necessário para entregar alimentos saudáveis e de procedência confiável à mesa da população.</p>
+        </section>
 
-            <div class="community-card">
-                <h3>Associação Córrego Grande</h3>
-                <p>A Associação dos Mini e Pequenos Produtores do Córrego Grande, fundada em 1988, é composta por 52 membros, todos devidamente inscritos no Cadastro Nacional da Agricultura Familiar (CAF).</p>
-                <p><strong>Principais produtos:</strong> hortifrutigranjeiros, olericultura, leite e derivados, além da produção de ovos, contribuindo para o abastecimento local com alimentos de qualidade.</p>
+        <section id="produtos">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <p>Confira a diversidade de produtos cultivados e fabricados de maneira artesanal e sustentável pelas nossas associações parceiras:</p>
+            <div class="product-list">
+                <div class="product-item">☕ Café Especial</div>
+                <div class="product-item">🥦 Horticultura & Olericultura</div>
+                <div class="product-item">🍯 Mel e Apicultura</div>
+                <div class="product-item">🥖 Farinha de Mandioca</div>
+                <div class="product-item">🥛 Leite e Derivados (Queijos)</div>
+                <div class="product-item">🥚 Ovos Caipiras</div>
             </div>
+        </section>
 
-            <div class="community-card">
-                <h3>Cooperativa COODAF</h3>
-                <p>A Cooperativa Agropecuária Diamantinense da Agricultura Familiar – COODAF, fundada em 2007, é composta por 42 membros, em sua maioria detentores do Cadastro Nacional da Agricultura Familiar (CAF).</p>
-                <p><strong>Principais produtos:</strong> mel, leite e derivados, hortifrutigranjeiros, olericultura e fabricação de farinha, contribuindo para o abastecimento local e a valorização da produção familiar.</p>
+        <section id="contacto">
+            <h2 class="section-title">Contacto</h2>
+            <p style="text-align: center;">Tem dúvidas sobre como adquirir os produtos ou quer falar com a Secretaria de Agricultura?</p>
+            <div class="contact-info">
+                <p>📍 <strong>Endereço:</strong> Secretaria de Agricultura e Meio Ambiente - Diamantino / MT</p>
+                <p>📞 <strong>Telefone Comercial:</strong> (65) 3336-XXXX</p>
+                <p>📧 <strong>E-mail:</strong> agricultura@diamantino.mt.gov.br</p>
             </div>
+        </section>
 
-        </div>
     </div>
 
     <footer>
