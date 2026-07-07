@@ -3,159 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal da Agricultura Familiar de Diamantino</title>
+    <title>Vitrine Rural Diamantino</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f4;
+            background-color: #f4f4f4;
             color: #333;
-            padding-bottom: 60px; /* Evita que o rodapé cubra o conteúdo */
-            scroll-behavior: smooth; /* Faz a rolagem do menu ser suave */
         }
-
         header {
-            background-color: #2e7d32;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        header h1 { margin: 0; font-size: 2.2rem; }
-        header p { margin: 5px 0 0 0; font-size: 1.1rem; opacity: 0.9; }
-
-        nav {
             background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 20px 0 0 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 5px 0 20px 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        nav {
+            background-color: #0d47a1; /* Substitua pela cor exata se necessário, usando verde escuro do padrão */
+            background-color: #144d17; 
             display: flex;
             justify-content: center;
-            padding: 10px 0;
-            position: sticky; /* Mantém o menu fixo no topo ao rolar a página */
-            top: 0;
-            z-index: 1000;
+            padding: 15px 0;
         }
-
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
+            margin: 0 20px;
             font-weight: bold;
-            border-radius: 4px;
-            transition: background 0.3s;
+            font-size: 1.1em;
         }
-
-        nav a:hover { background-color: #43a047; }
-
+        nav a:hover {
+            text-decoration: underline;
+        }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 30px auto;
-            padding: 20px;
-            background-color: white;
+            background: white;
+            padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
-
-        section {
-            padding: 40px 0;
-            border-bottom: 2px solid #e0e0e0;
-        }
-
-        section:last-of-type {
-            border-bottom: none; /* Remove a linha divisória do último item */
-        }
-
-        .welcome-section {
-            text-align: left;
-            padding-top: 10px;
-        }
-
-        .welcome-section h2, .section-title { 
-            color: #2e7d32; 
+        .welcome {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
-
-        p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-            color: #444;
+        .welcome h2 {
+            color: #2e7d32;
+            font-size: 1.8em;
         }
-
-        /* Estilo para a grade das Associações */
-        .communities-grid {
-            display: flex;
-            gap: 20px;
-            justify-content: space-between;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .community-card {
-            flex: 1;
-            min-width: 280px;
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            transition: transform 0.2s;
-        }
-
-        .community-card:hover {
-            transform: translateY(-5px);
-            border-color: #2e7d32;
-        }
-
-        .community-card h3 {
+        .section-title {
+            text-align: center;
             color: #1b5e20;
-            margin-top: 0;
-            border-bottom: 2px solid #43a047;
-            padding-bottom: 8px;
+            font-size: 1.6em;
+            margin-bottom: 25px;
         }
-
-        .community-card p {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: #555;
-        }
-
-        /* Estilos da lista de produtos */
-        .product-list {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
-        .product-item {
-            background-color: #f9fbf9;
-            border-left: 4px solid #2e7d32;
-            padding: 10px 15px;
-            border-radius: 0 4px 4px 0;
-            font-weight: 500;
-        }
-
-        /* Estilos da seção de Contato */
-        .contact-info {
-            background-color: #f9fbf9;
+        .card {
+            border: 1px solid #ddd;
+            border-top: 4px solid #2e7d32;
             padding: 20px;
-            border-radius: 8px;
-            border: 1px dashed #2e7d32;
-            max-width: 500px;
-            margin: 0 auto;
+            border-radius: 4px;
+            background: #fff;
         }
-
+        .card h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
         footer {
+            background-color: #2d2d2d;
+            color: #ccc;
             text-align: center;
-            padding: 15px;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: 0.9rem;
+            padding: 20px;
+            font-size: 0.9em;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -164,76 +97,51 @@
     <header>
         <h1>Vitrine Rural Diamantino</h1>
         <p>Portal da Agricultura Familiar de Diamantino</p>
+        
+        <!-- Menu alterado conforme solicitado -->
+        <nav>
+            <a href="#sobre-nos">Sobre nós</a>
+            <a href="#ceiba">Ceiba</a>
+            <a href="#corrego-grande">Corrego Grande</a>
+            <a href="#coodaf">COODAF</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#sobre-nos">Sobre Nós</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-
     <div class="container">
-        
-        <section id="inicio" class="welcome-section">
-            <h2>Bem-vindo ao espaço da Agricultura Familiar de Diamantino</h2>
-            <p>Criado pela Secretaria Municipal de Agricultura e Meio Ambiente, este portal valoriza e dá visibilidade aos produtores locais, fortalecendo a conexão entre campo e cidade. Aqui você encontra as associações Associação CEIBA, Associação do Córrego Grande e COODAF, que apresentam seus produtos, disponibilizam contatos para vendas e esclarecem dúvidas, além de um espaço com fotos que mostram a realidade e o trabalho no campo. Um canal direto para apoiar quem produz, gerar oportunidades e fortalecer a agricultura familiar do nosso município.</p>
-            
-            <h2 class="communities-title" style="text-align: center; color: #2e7d32; margin-top: 40px;">Associações e Cooperativas Atendidas</h2>
-            <div class="communities-grid">
-                <div class="community-card">
-                    <h3>Associação CEIBA</h3>
-                    <p>A Associação da Agricultura Familiar Sustentável de Policultura – CEIBA, fundada em 2012, é uma organização composta por 51 membros, em sua maioria detentores do Cadastro Nacional da Agricultura Familiar (CAF).</p>
-                    <p><strong>Principais produtos:</strong> café, olericultura, horticultura, apicultura, fabricação de farinha de mandioca, além da produção de leite e seus derivados.</p>
-                </div>
+        <div class="welcome">
+            <h2>Bem-vindo ao nosso Portal!</h2>
+            <p>Este espaço foi criado para valorizar e dar visibilidade aos produtos da agricultura familiar da nossa região de Diamantino.</p>
+        </div>
 
-                <div class="community-card">
-                    <h3>Associação Córrego Grande</h3>
-                    <p>A Associação dos Mini e Pequenos Produtores do Córrego Grande, fundada em 1988, é composta por 52 membros, todos devidamente inscritos no Cadastro Nacional da Agricultura Familiar (CAF).</p>
-                    <p><strong>Principais produtos:</strong> hortifrutigranjeiros, olericultura, leite e derivados, além da produção de ovos, contribuindo para o abastecimento local com alimentos de qualidade.</p>
-                </div>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
 
-                <div class="community-card">
-                    <h3>Cooperativa COODAF</h3>
-                    <p>A Cooperativa Agropecuária Diamantinense da Agricultura Familiar – COODAF, fundada em 2007, é composta por 42 membros, em sua maioria detentores do Cadastro Nacional da Agricultura Familiar (CAF).</p>
-                    <p><strong>Principais produtos:</strong> mel, leite e derivados, hortifrutigranjeiros, olericultura e fabricação de farinha, contribuindo para o abastecimento local e a valorização da produção familiar.</p>
-                </div>
+        <h2 class="section-title">Associações e Cooperativas Atendidas</h2>
+
+        <div class="grid">
+            <!-- Card CEIBA -->
+            <div class="card" id="ceiba">
+                <h3>Associação da Agricultura Familiar Sustentável de Policultura – CEIBA</h3>
+                <p>Fundada em 2012, é uma organização composta por 51 membros, em sua maioria detentores do Cadastro Nacional da Agricultura Familiar (CAF).</p>
+                <p><strong>Principais produtos:</strong> café, olericultura, horticultura, apicultura, fabricação de farinha de mandioca, além da produção de leite e seus derivados.</p>
             </div>
-        </section>
 
-        <section id="sobre-nos">
-            <h2 class="section-title">Sobre Nós</h2>
-            <p>O Portal Vitrine Rural Diamantino nasceu com o propósito de aproximar o consumidor da riqueza produzida no campo de Diamantino - MT. Gerido em parceria com órgãos governamentais e representações locais, buscamos encurtar caminhos comerciais e garantir que a dedicação do trabalhador rural seja reconhecida.</p>
-            <p>Nossa missão é impulsionar a sustentabilidade econômica das famílias do campo, promovendo técnicas agrícolas tradicionais aliadas ao suporte técnico necessário para entregar alimentos saudáveis e de procedência confiável à mesa da população.</p>
-        </section>
-
-        <section id="produtos">
-            <h2 class="section-title">Nossos Produtos</h2>
-            <p>Confira a diversidade de produtos cultivados e fabricados de maneira artesanal e sustentável pelas nossas associações parceiras:</p>
-            <div class="product-list">
-                <div class="product-item">☕ Café Especial</div>
-                <div class="product-item">🥦 Horticultura & Olericultura</div>
-                <div class="product-item">🍯 Mel e Apicultura</div>
-                <div class="product-item">🥖 Farinha de Mandioca</div>
-                <div class="product-item">🥛 Leite e Derivados (Queijos)</div>
-                <div class="product-item">🥚 Ovos Caipiras</div>
+            <!-- Card Córrego Grande -->
+            <div class="card" id="corrego-grande">
+                <h3>Associação dos Mini e Pequenos Produtores do Córrego Grande</h3>
+                <p>Fundada em 1988, é composta por 52 membros, todos devidamente inscritos no Cadastro Nacional da Agricultura Familiar (CAF).</p>
+                <p><strong>Principais produtos:</strong> hortifrutigranjeiros, olericultura, leite e derivados, além da produção de ovos, contribuindo para o abastecimento local com alimentos de qualidade.</p>
             </div>
-        </section>
 
-        <section id="contacto">
-            <h2 class="section-title">Contacto</h2>
-            <p style="text-align: center;">Tem dúvidas sobre como adquirir os produtos ou quer falar com a Secretaria de Agricultura?</p>
-            <div class="contact-info">
-                <p>📍 <strong>Endereço:</strong> Secretaria de Agricultura e Meio Ambiente - Diamantino / MT</p>
-                <p>📞 <strong>Telefone Comercial:</strong> (65) 3336-XXXX</p>
-                <p>📧 <strong>E-mail:</strong> agricultura@diamantino.mt.gov.br</p>
+            <!-- Card COODAF -->
+            <div class="card" id="coodaf">
+                <h3>Cooperativa Agropecuária Diamantinense da Agricultura Familiar – COODAF</h3>
+                <p>Fundada em 2007, é composta por 42 membros...</p>
             </div>
-        </section>
-
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Vitrine Rural Diamantino - Uma iniciativa em parceria com a Secretaria de Agricultura e Meio Ambiente - MT</p>
+        © 2026 Vitrine Rural Diamantino - Uma iniciativa em parceria com a Secretaria de Agricultura e Meio Ambiente - MT
     </footer>
 
 </body>
