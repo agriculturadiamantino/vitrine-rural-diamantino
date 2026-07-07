@@ -54,12 +54,21 @@
         }
 
         .welcome-section {
-            text-align: center;
+            text-align: left; /* Alinhado à esquerda para melhor leitura de blocos de texto maiores */
             padding: 10px 0 30px 0;
             border-bottom: 2px solid #e0e0e0;
         }
 
-        .welcome-section h2 { color: #2e7d32; }
+        .welcome-section h2 { 
+            color: #2e7d32; 
+            text-align: center; /* Mantém o título de boas-vindas centralizado */
+        }
+
+        .welcome-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
 
         /* Estilo para a seção das Associações */
         .communities-title {
@@ -133,29 +142,26 @@
 
     <div class="container">
         <section class="welcome-section">
-            <h2>Bem-vindo ao nosso Portal!</h2>
-            <p>Este espaço foi criado para valorizar e dar visibilidade aos produtos da agricultura familiar da nossa região de Diamantino.</p>
+            <h2>Bem-vindo ao espaço da Agricultura Familiar de Diamantino</h2>
+            <p>Este é um ambiente criado pela Secretaria Municipal de Agricultura e Meio Ambiente de Diamantino para valorizar, fortalecer e dar visibilidade ao trabalho dos nossos agricultores familiares. Aqui, você encontrará produtos de qualidade, cultivados com dedicação por quem movimenta a economia local e preserva nossas tradições.</p>
+            <p>O portal reúne as principais associações e cooperativas do município — Associação CEIBA, Associação dos Produtores do Córrego Grande e COODAF — promovendo a conexão direta entre produtores e consumidores. Neste espaço, cada organização pode apresentar seus produtos, compartilhar informações, divulgar contatos para vendas e esclarecer dúvidas, aproximando o campo da cidade de forma prática e acessível.</p>
         </section>
 
-        <!-- SEÇÃO DAS ASSOCIAÇÕES E COOPERATIVAS DO MUNICÍPIO  -->
         <h2 class="communities-title">Associações e Cooperativas Atendidas</h2>
         <div class="communities-grid">
             
-            <!-- Card 1: CEIBA -->
             <div class="community-card">
                 <h3>Associação CEIBA</h3>
-                <p>A Associação da Agricultura Familiar Sustentável de Policultura – CEIBA, fundada em 2012, é uma organização composta por 51 membros, em sua maioria detentores do Cadastro Nacional da Agricultura Familiar (CAF).</p>
+                <p>A Associação da Agricultura Familiar Sustentável de Policultura – CEIBA,pfundada em 2012, é uma organização composta por 51 membros, em sua maioria detentores do Cadastro Nacional da Agricultura Familiar (CAF).</p>
                 <p><strong>Principais produtos:</strong> café, olericultura, horticultura, apicultura, fabricação de farinha de mandioca, além da produção de leite e seus derivados.</p>
             </div>
 
-            <!-- Card 2: Córrego Grande -->
             <div class="community-card">
                 <h3>Associação Córrego Grande</h3>
                 <p>A Associação dos Mini e Pequenos Produtores do Córrego Grande, fundada em 1988, é composta por 52 membros, todos devidamente inscritos no Cadastro Nacional da Agricultura Familiar (CAF).</p>
                 <p><strong>Principais produtos:</strong> hortifrutigranjeiros, olericultura, leite e derivados, além da produção de ovos, contribuindo para o abastecimento local com alimentos de qualidade.</p>
             </div>
 
-            <!-- Card 3: COODAF -->
             <div class="community-card">
                 <h3>Cooperativa COODAF</h3>
                 <p>A Cooperativa Agropecuária Diamantinense da Agricultura Familiar – COODAF, fundada em 2007, é composta por 42 membros, em sua maioria detentores do Cadastro Nacional da Agricultura Familiar (CAF).</p>
