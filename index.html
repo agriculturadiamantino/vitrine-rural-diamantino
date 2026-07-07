@@ -5,36 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal da Agricultura Familiar de Diamantino</title>
     <style>
-        /* Estilos básicos para o site */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f7f4;
             color: #333;
+            padding-bottom: 60px; /* Evita que o rodapé cubra o conteúdo */
         }
 
-        /* Topo / Cabeçalho */
         header {
-            background-color: #2e7d32; /* Verde Agricultura */
+            background-color: #2e7d32;
             color: white;
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-        }
+        header h1 { margin: 0; font-size: 2.2rem; }
+        header p { margin: 5px 0 0 0; font-size: 1.1rem; opacity: 0.9; }
 
-        header p {
-            margin: 5px 0 0 0;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Menu de Navegação */
         nav {
             background-color: #1b5e20;
             display: flex;
@@ -52,11 +42,8 @@
             transition: background 0.3s;
         }
 
-        nav a:hover {
-            background-color: #43a047;
-        }
+        nav a:hover { background-color: #43a047; }
 
-        /* Conteúdo Principal */
         .container {
             max-width: 1000px;
             margin: 30px auto;
@@ -68,17 +55,59 @@
 
         .welcome-section {
             text-align: center;
-            padding: 20px 0;
+            padding: 10px 0 30px 0;
+            border-bottom: 2px solid #e0e0e0;
         }
 
-        .welcome-section h2 {
+        .welcome-section h2 { color: #2e7d32; }
+
+        /* Estilo para a seção das Comunidades */
+        .communities-title {
+            text-align: center;
             color: #2e7d32;
+            margin-top: 30px;
         }
 
-        /* Rodapé */
+        .communities-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .community-card {
+            flex: 1;
+            min-width: 280px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+
+        .community-card:hover {
+            transform: translateY(-5px);
+            border-color: #2e7d32;
+        }
+
+        .community-card h3 {
+            color: #1b5e20;
+            margin-top: 0;
+            border-bottom: 2px solid #43a047;
+            padding-bottom: 8px;
+        }
+
+        .community-card p {
+            font-size: 0.95rem;
+            line-line-height: 1.5;
+            color: #555;
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             background-color: #333;
             color: white;
             position: fixed;
@@ -107,12 +136,38 @@
         <section class="welcome-section">
             <h2>Bem-vindo ao nosso Portal!</h2>
             <p>Este espaço foi criado para valorizar e dar visibilidade aos produtos da agricultura familiar da nossa região de Diamantino.</p>
-            <p>Em breve, encontrará aqui uma vitrine completa com os melhores produtos da nossa terra.</p>
         </section>
+
+        <!-- SEÇÃO DAS 3 COMUNIDADES -->
+        <h2 class="communities-title">Comunidades Atendidas</h2>
+        <div class="communities-grid">
+            
+            <!-- Comunidade 1 -->
+            <div class="community-card">
+                <h3>Comunidade 1</h3>
+                <p>Insira aqui a descrição da primeira comunidade produtora. Você pode falar sobre a localização, as principais famílias e a história do local.</p>
+                <p><strong>Principais produtos:</strong> Hortaliças, legumes e doces caseiros.</p>
+            </div>
+
+            <!-- Comunidade 2 -->
+            <div class="community-card">
+                <h3>Comunidade 2</h3>
+                <p>Insira aqui a descrição da segunda comunidade rural. Destaque o tipo de produção que eles dominam e como o público pode apoiar.</p>
+                <p><strong>Principais produtos:</strong> Queijos artesanais, leite e panificação.</p>
+            </div>
+
+            <!-- Comunidade 3 -->
+            <div class="community-card">
+                <h3>Comunidade 3</h3>
+                <p>Insira aqui a descrição da terceira comunidade de Diamantino. Escreva sobre as características únicas do cultivo feito por eles.</p>
+                <p><strong>Principais produtos:</strong> Frutas da época, mel e polpas naturais.</p>
+            </div>
+
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Vitrine Rural Diamantino - Todos os direitos reservados.</p>
+        <p>&copy; 2026 Vitrine Rural Diamantino - Uma iniciativa em parceria com a Emater-MG</p>
     </footer>
 
 </body>
